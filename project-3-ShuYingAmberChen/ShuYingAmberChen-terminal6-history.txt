@@ -1,0 +1,1000 @@
+   66  cat lp_data.csv | head -n 5
+   67  cat lp_data.csv | head
+   68  cat lp_data.csv | sort
+   69  cat annot_fpid.json | jq '.[][]'
+   70  cat annot_fpid.json | jq '.[][]' - r | sort
+   71  cat annot_fpid.json | jq '.[][]' - r | sort | uniq -C
+   72  cat annot_fpid.json | jq '.[][]' - r | sort | uniq -C | sort -nr |heard
+   73  cat annot_fpid.json | jq '.[][]' - r | sort | uniq -C | sort -nr |head
+   74  cat annot_fpid.json | jq '.[][]' - r | sort | uniq -c | sort -nr |head
+   75  bq --help
+   76  bq query --help
+   77  bq query --use_legacy_sql=false 'SELECT count(distinct station_id) FROM `bigquery-public-data.san_francisco.bikeshare_status`'
+   78  bq query --use_legacy_sql=false 'SELECT * FROM `ambient-depth-276523.Test.region_station`'
+   79  cd w205
+   80  cd project-1-ShuYingAmberChen
+   81  vim README.md
+   82  cd w205
+   83  docker ps
+   84  docker logs 3520adcb5622
+   85  cd w205/project-1-ShuYingAmberChen
+   86  vim README.md
+   87  git branch
+   88  git commit README.md -m "updated formatting"
+   89  git push
+   90  vim README.md
+   91  cd w205/project-1-ShuYingAmberChen
+   92  vim README.md
+   93  git branch
+   94  git add README.md
+   95  git commit README.md -m "finished part 2 draft"
+   96  git push
+   97  cd w205/project-1-ShuYingAmberChen
+   98  vim README.md
+   99  cd..
+  100  cd w205
+  101  docker run -it --rm
+  102  cd w205/
+  103  cd ..
+  104  docker run -it --rm -v ~/w205:/w205 midsw205/base bash
+  105  docker ps
+  106  docker run -it --rm -v ~/w205:/w205 midsw205/base bash
+  107  docker ps
+  108  cd w205
+  109  docker run -d redis
+  110  docker logs gallant ellis
+  111  docker logs gallant_ellis
+  112  docker run redis
+  113  docker run -d redis
+  114  docker logs gallant_ellis
+  115  docker rm -f gallant_ellis
+  116  docker run -d --name redis -p 6379:6379 redis
+  117  docker ps
+  118  sudo apt update
+  119  sudo apt install docker-compose
+  120  mkdir redis-standalone
+  121  cd redis-standalone/
+  122  cp ../course-content/05-Storing-Data-II/example-0-docker-compose.yml docker-compose.yml
+  123  ls
+  124  dcoker-compose up -d
+  125  docker-compose up -d
+  126  docker ps
+  127  docker rm -f redis
+  128  docker ps
+  129  docker-compose up -d
+  130  docker-compose logs redis
+  131  pip install redis
+  132  ipython
+  133  docker-compose down
+  134  cp ../course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  135  docker-compose up -d
+  136  docker-compose exec mids bash
+  137  dcoker ps
+  138  docker ps
+  139  docker-compose down
+  140  docker-compose ps
+  141  cd..
+  142  mkdir jupyternotebook
+  143  cd jupyternotebook/
+  144  cp ../course-content/05-Storing-Data-II/example-2-docker-compose.yml docker-compose.yml
+  145  cd..
+  146  cd
+  147  mkdir jupyternotebook
+  148  cd jupyternotebook/
+  149  cp ../course-content/05-Storing-Data-II/example-2-docker-compose.yml docker-compose.yml
+  150  cd
+  151  cd w205
+  152  mkdir jupyternotebook
+  153  cd jupyternotebook/
+  154  cp ../course-content/05-Storing-Data-II/example-2-docker-compose.yml docker-compose.yml
+  155  docker-compose up -d
+  156  docker-compose exec mids jupyter notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root
+  157  cd ../course-content/05-Storing-Data-II/example-4-docker-compose.yml docker-compose.yml
+  158  cp ../course-content/05-Storing-Data-II/example-4-docker-compose.yml docker-compose.yml
+  159  vim docker-compose.yml 
+  160  docker-compose up -d
+  161  docker-composure logs mids
+  162  docker-composure exec mids
+  163  docker-compose logs mids
+  164  cd w205
+  165  docker run redis
+  166  cd w205
+  167  cd project-1-ShuYingAmberChen/
+  168  vim README.md
+  169  git branch
+  170  ls
+  171  ls .git
+  172  git add README.md
+  173  git commit README.md -m "Finished Part 1 and 2."
+  174  git add Project_1.ipynb
+  175  git commit Project_1.ipynb -m "Finished Part 3"
+  176  git push
+  177  git add Project_1.ipynb
+  178  git commit Project_1.ipynb -m "Updated Part 3"
+  179  git push
+  180  git add Project_1.ipynb
+  181  git commit Project_1.ipynb -m "Updated Part 3"
+  182  git push
+  183  cd w205/course-content/
+  184  git pull --all
+  185  pwd
+  186  mkdir kafka^C
+  187  cd kafka
+  188  cd kafka/
+  189  mkdir kafka
+  190  cd kafka/
+  191  cp ../course-content/06-Transforming-Data/docker-compose.yml  .
+  192  ls
+  193  vim docker-compose.yml 
+  194  docker-compose up -d
+  195  docker-c ps
+  196  docker-compose ps
+  197  docker-compose  logs zookeeper | grep -i binding
+  198  docker-compose  logs zookeeper | grep -i started
+  199  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists -zookeeper zookeeper:32181
+  200  man seq
+  201  seq 5
+  202  docker-compose exec kafka kafka-topics --describe --topic foo --partitions 1 --replication-factor 1 --if-not-exists -zookeeper zookeeper:32181
+  203  docker-compose exec kafka kafka-topics --describe --topic foo --zookeeper zookeeper:32181
+  204  docker-compose exec kafka bash -c  "seq 42 | kafka-console-producer --request-required-acks l --broker-list localhost:29092 -- topic foo && echo 'Produced 42 messages'"
+  205  docker-compose exec kafka   bash -c "seq 42 | kafka-console-producer \
+  206      --request-required-acks 1 \
+  207      --broker-list localhost:29092 \
+  208      --topic foo && echo 'Produced 42 messages.'"
+  209  docker-compose exec kafka   kafka-console-consumer     --bootstrap-server localhost:29092     --topic foo     --from-beginning     --max-messages 42
+  210  docker-compose up -d
+  211  curl -L -o github-example-large.json https://goo.gl/Y4MD58
+  212  docker-compose exec kafka     kafka-topics       --create       --topic foo       --partitions 1       --replication-factor 1       --if-not-exists       --zookeeper zookeeper:32181
+  213  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json"
+  214  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"
+  215  docker-compose exec kafka   kafka-topics     --describe     --topic foo     --zookeeper zookeeper:32181
+  216  ls
+  217  docker-compose exec mids bash -c "cat /w205/course-content/kafka/github-example-large.json"
+  218  docker-compose exec mids bash -c "cat /w205/course-content/kafka/github-example-large.json | jq '.[]' -c"
+  219  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  220  docker-compose exec mids bash -c "cat /w205/course-content/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  221  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t foo -o beginning -e"
+  222  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t foo -o beginning -e" | wc -l
+  223  git clone https://github.com/mids-w205-schioberg/project-2-ShuYingAmberChen.git
+  224  mv project-2-ShuYingAmberChen w205/
+  225  git branch assignment
+  226  cd w205/project-2-ShuYingAmberChen/
+  227  git branch assignment
+  228  git checkout branch
+  229  git checkout assignment
+  230  git branch
+  231  history > ShuYingAmberChen-history.txt
+  232  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp`
+  233  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  234  cp w205/course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  235  cp ../course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  236  cp ../course-content/06-Transforming-Data/docker-compose.yml docker-compose.yml
+  237  docker-compose up -d
+  238  docker-compose ps
+  239  history > ShuYingAmberChen-history.txt
+  240  docker-compose logs zookeeper | grep -i binding
+  241  docker-compose logs kafka | grep -i started
+  242  docker-compose exec kafka   kafka-topics     --create     --topic foo     --partitions 1     --replication-factor 1     --if-not-exists \
+  243  docker-compose exec kafka kafka-topics --create --topic EdTechAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  244  docker-compose exec kafka kafka-topics --describe --topic EdTechAssessment --zookeeper zookeeper:32181
+  245  docker-compose exec mids bash -c "cat w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json"
+  246  docker-compose exec mids bash -c "cat assessment-attempts-20180128-121051-nested.json"
+  247  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json"
+  248  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  249  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c |wc -|"
+  250  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -|"
+  251  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  252  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.data | length'"
+  253  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.id | length'"
+  254  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq | length"
+  255  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '| length"
+  256  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '| length'"
+  257  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[] -c | length'"
+  258  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[] | length'"
+  259  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '| length'"
+  260  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  261  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 3280 messages.'"
+  262  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 3280 messages.'"
+  263  docker-compose exec kafka kafka-console-consumer --bootstrap-server kafka:29092 --topic foo --from-beginning --max-messages 42
+  264  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t foo -o beginning -e"
+  265  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e"
+  266  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t E
+  267  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment && echo 'Produced 3280 messages.'"
+  268  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e"
+  269  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e" | wc -l
+  270  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  271  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment && echo 'Produced 3281 messages.'"
+  272  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment && echo 'Produced 3281 messages.'"
+  273  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e"
+  274  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e" | wc -l
+  275  docker-compose exec kafka kafka-topics --create --topic EdTechAssessment
+  276  docker-compose exec kafka kafka-topics --delete --topic EdTechAssessment
+  277  history ShuYingAmberChen-history.txt 
+  278  history > ShuYingAmberChen-history.txt 
+  279  docker-compose exec kafka kafka-topics --create --topic EdTechAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  280  docker-compose exec kafka kafka-topics --describe --topic EdTechAssessment --zookeeper zookeeper:32181
+  281  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json"
+  282  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json" | jq '.'"
+  283  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.'"
+  284  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  285  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  286  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment && echo 'Produced 3281 messages.'"
+  287  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e"
+  288  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment -o beginning -e" | wc -l
+  289  docker-compose exec kafka kafka-topics --create --topic EdTechAssessment2 --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  290  docker-compose exec kafka kafka-topics --describe --topic EdTechAssessment2 --zookeeper zookeeper:32181
+  291  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment && echo 'Produced all messages.'"
+  292  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdTechAssessment2 && echo 'Produced all messages.'"
+  293  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment2 -o beginning -e" | wc -l
+  294  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment2 -o beginning -e"
+  295  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t EdTechAssessment2 -o beginning -e" | wc -l
+  296  docker-compose down
+  297  history > ShuYingAmberChen-history.txt 
+  298  cd w205
+  299  mkdir spark-with-kafka
+  300  cd spark-with-kafka/
+  301  cp ../course-content/07-Sourcing-Data/docker-compose.yml 
+  302  cp ../course-content/07-Sourcing-Data/docker-compose.yml  .
+  303  ls
+  304  docker-compose up -d
+  305  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  306  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list kafka:29092 --topic foo && echo 'Produced 42 messages.'"
+  307  docker-compose exec spark pyspark
+  308  dcoker-compose down
+  309  docker-compose down
+  310  docker-compose up -d
+  311  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  312  docker-compose exec mids bash -c "cat /w205/github-example-large.json | jq '.[]' -c"
+  313  curl -L -o github-example-large.json https://goo.gl/Y4MD58
+  314  docker-compose exec mids bash -c "cat /w205/github-example-large.json | jq '.[]' -c"
+  315  docker-compose exec mids bash -c "cat /w205/spark-with-kafka/github-example-large.json | jq '.[]' -c"
+  316  docker-compose exec mids bash -c "cat /w205/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  317  docker-compose exec mids bash -c "cat /w205/spark-with-kafka/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  318  dcoker-compose exec spark pyspark
+  319  docker-compose exec spark pyspark
+  320  cd w205/project-2-ShuYingAmberChen/Part2
+  321  docker-compose exec spark pyspark
+  322  history > ShuYingAmberChen-history.txt
+  323  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  324  vim docker-compose.yml 
+  325  docker-compose up -d
+  326  docker-compose logs -f kafka
+  327  docker-compose exec kafka kafka-topics --create --topic EdAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  328  docker-compose exec kafka kafka-topics --describe --topic EdAssessment --zookeeper zookeeper:32181
+  329  docker-compose exec mids bash -c "cat w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  330  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  331  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  332  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdAssessment && echo 'Produced 3280 messages.'"
+  333  docker-compose exec kafka kafka-topics --create --topic EduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  334  docker-compose exec kafka kafka-topics --describe --topic EduAssessment --zookeeper zookeeper:32181
+  335  docker-compose exec mids bash -c "cat w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  336  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  337  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  338  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EduAssessment && echo 'Produced 3280 messages.'"
+  339  docker-compose exec spark pyspark
+  340  cd w205/spark-with-kafka-and-hdfs/
+  341  docker-compose exec mids bash -c "cat /w205/spark-with-kafka-and-hdfs/players.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t players"
+  342  docker-compose exec cloudera hadoop fs -ls /tmp/
+  343  docker-compose exec kafka   kafka-topics     --create     --topic commits     --partitions 1     --replication-factor 1     --if-not-exists     --zookeeper zookeeper:32181
+  344  docker-compose exec mids bash -c "cat /w205/spark-with-kafka-and-hdfs/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t commits"
+  345  docker-compose exec cloudera hadoop fs -ls /tmp/
+  346  docker-compose exec cloudera hadoop fs -ls /tmp/commits/
+  347  cd w205
+  348  cd project-2-ShuYingAmberChen/Part2
+  349  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  350  docker-compose up -d
+  351  docker-compose logs -f kafka
+  352  docker-compose exec kafka kafka-topics --create --topic EduAssess --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  353  docker-compose exec kafka kafka-topics --describe --topic EduAssess --zookeeper zookeeper:32181
+  354  docker-compose exec spark pyspark
+  355  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list kafka:29092 --topic EduAssess && echo 'Produced 42 messages.'"
+  356  docker-compose exec spark pyspark
+  357  cd w205
+  358  mkdir ~/w205/spark-with-kafka-and-hdfs
+  359  cd ~/w205/spark-with-kafka-and-hdfs
+  360  cp ~/w205/course-content//08-Querying-Data/docker-compose.yml .
+  361  cp ../spark-with-kafka/github-example-large.json .
+  362  curl -L -o players.json https://goo.gl/vsuCpZ
+  363  ls -lah
+  364  docker-compose up -d
+  365  docker-compose logs -f kafka
+  366  docker-compose exec cloudera hadoop fs -ls /tmp/
+  367  docker-compose logs -f kafka
+  368  docker-compose exec kafka   kafka-topics     --create     --topic players     --partitions 1     --replication-factor 1     --if-not-exists     --zookeeper zookeeper:32181
+  369  docker-compose exec mids   bash -c "cat /w205/<your_workspace>/players.json \
+  370      | jq '.[]' -c \
+  371      | kafkacat -P -b kafka:29092 -t players"
+  372  less player.json
+  373  less players.json
+  374  docker-compose exec spark pyspark
+  375  docker-compose down
+  376  cd..
+  377  cd
+  378  cd w205/project-2-ShuYingAmberChen/
+  379  cd part 2
+  380  cd Part2
+  381  cp ../w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  382  git branch
+  383  cd..
+  384  cd
+  385  cd w205/
+  386  cd project-2-ShuYingAmberChen/
+  387  cd Part2
+  388  cp ../course-content/07-Sourcing-Data/docker-compose.yml .
+  389  cd
+  390  cp ../course-content/07-Sourcing-Data/docker-compose.yml .
+  391  cp ../w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  392  cd w205/
+  393  cd project-2-ShuYingAmberChen/
+  394  cd Part2
+  395  cp ~/course-content/07-Sourcing-Data/docker-compose.yml /
+  396  cp ~/course-content/07-Sourcing-Data/docker-compose.yml .
+  397  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  398  vim docker-compose.yml
+  399  docker-compose up -d
+  400  docker-compose logs -f kafka
+  401  docker-compose exec kafka kafka-topics --create --topic EdAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  402  docker-compose exec kafka kafka-topics --describe --topic EdAssessment --zookeeper zookeeper:32181
+  403  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  404  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  405  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t EdAssessment && echo 'Produced 3280 messages.'"
+  406  docker-compose exec spark pyspark
+  407  docker-compose exec cloudera hadoop fs -ls /tmp/
+  408  cd w205/project-2-ShuYingAmberChen/Part3
+  409  docker-compose exec cloudera hadoop fs -ls /tmp/
+  410  docker-compose exec cloudera hadoop fs -ls /tmp/messages/
+  411  docker-compose exec cloudera hadoop fs -ls /tmp/
+  412  docker-compose exec cloudera hadoop fs -ls /tmp/messages/
+  413  history > ShuYingAmberChen-terminal2-history.txt
+  414  cd w205/project-2-ShuYingAmberChen/Part2
+  415  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  416  docker-compose up -d
+  417  docker-compose logs -f kafka
+  418  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  419  docker-compose up -d
+  420  docker-compose logs -f kafka
+  421  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  422  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list kafka:29092 --topic foo && echo 'Produced 42 messages.'"
+  423  docker-compose exec spark pyspark
+  424  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  425  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  426  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  427  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  428  docker-compose exec spark pyspark
+  429  docker-compose exec spark cat /root/.python_history
+  430  docker-compose down
+  431  history > ShuYingAmberChen-history.txt
+  432  cd ..
+  433  mkdir Part3
+  434  cd Part#
+  435  cd Part3
+  436  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml /
+  437  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml .
+  438  docker-compose up -d
+  439  docker-compose logs -f kafka
+  440  docker-compose exec cloudera hadoop fs -ls /tmp/
+  441  docker-compose exec kafka kafka-topics --create --topic edAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  442  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t edAssessment"
+  443  docker-compose exec spark pyspark
+  444  docker-compose exec spark cat /root/.python_history
+  445  history > ShuYingAmberChen-history.txt
+  446  docker-compose down
+  447  history > ShuYingAmberChen-history.txt
+  448  docker-compose exec mids curl http://localhost:5000/
+  449  cd w205/flask-with-kafka/
+  450  docker-compose exec mids curl http://localhost:5000/
+  451  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  452  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  453  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  454  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  455  docker-compose exec mids curl http://localhost:5000/
+  456  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  457  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  458  docker-compose exec mids curl http://localhost:5000/
+  459  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  460  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  461  docker-compose exec mids curl http://localhost:5000/
+  462  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  463  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  464  cd w205
+  465  mkdir flask-with-kafka/
+  466  cd flask-with-kafka/
+  467  cp ../course-content/09-Ingesting-Data//docker-compose.yml .
+  468  docker-compose up -d
+  469  cp ../course-content/09-Ingesting-Data/*.py
+  470  cp ../course-content/09-Ingesting-Data/*.py .
+  471  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  472  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/basic_game_api.py flask run
+  473  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/game_api.py flask run
+  474  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/game_api.py flask run --host 0.0.0.0
+  475  vim game_api.py
+  476  https://github.com/mids-w205-schioberg/project-2-dschioberg/pull/1
+  477  https://github.com/mids-w205-schioberg/project-2-dschioberg/pull
+  478  vim docker-compose.yml
+  479  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/game_api.py flask run
+  480  docker-compose down
+  481  cd..
+  482  cd ..
+  483  cd project-2-ShuYingAmberChen/
+  484  cd Part3
+  485  docker-compose up -d
+  486  docker-compose logs -f kafka
+  487  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t edAssessment"
+  488  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  489  docker-compose down
+  490  cd w205/project-2-ShuYingAmberChen/Part3
+  491  docker-compose exec cloudera hadoop fs -ls /tmp/
+  492  docker-compose exec cloudera hadoop fs -ls /tmp/messages2
+  493  docker-compose exec cloudera hadoop fs -ls /tmp/
+  494  docker-compose exec cloudera hadoop fs -ls /tmp/extracted_messages
+  495  docker-compose exec cloudera hadoop fs -rm /tmp/messages2
+  496  docker-compose exec cloudera hadoop fs -rm -skipTrash /tmp/messages
+  497  docker-compose exec cloudera hadoop fs -rm -skipTrash /tmp/messages2/part-00000-a03c7a62-6145-4c5b-a062-acd140906ade-c000.snappy.parquet
+  498  docker-compose exec cloudera hadoop fs -rm -skipTrash /tmp/messages2/_SUCCESS
+  499  docker-compose exec cloudera hadoop fs -ls /tmp/
+  500  docker-compose exec cloudera hadoop fs -rm -skipTrash /tmp/messages2
+  501  docker-compose exec cloudera hadoop fs -ls /tmp/
+  502  history > ShuYingAmberChen-terminal2-history.txt
+  503  cd w205/project-2-ShuYingAmberChen/Part2
+  504  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  505  docker-compose up -d
+  506  docker-compose logs -f kafka
+  507  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  508  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  509  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  510  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  511  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  512  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root --notebook-dir=/w205/' pyspark
+  513  docker-compose down
+  514  docker-compose up -d
+  515  docker-compose logs -f kafka
+  516  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  517  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  518  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  519  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  520  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  521  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root --notebook-dir=/w205/' pyspark
+  522  docker-compose down
+  523  docker-compose up -d
+  524  docker-compose logs -f kafka
+  525  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  526  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  527  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  528  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  529  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  530  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root --notebook-dir=/w205/' pyspark
+  531  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  532  docker-compose down
+  533  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml .
+  534  vim docker-compose.yml
+  535  docker-compose up -d
+  536  vim docker-compose.yml
+  537  docker-compose up -d
+  538  docker-compose logs -f kafka
+  539  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  540  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  541  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  542  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  543  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  544  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  545  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  546  docker ps
+  547  docker cp e71cfcc69a85:/spark-2.2.0-bin-hadoop2.6/Part2-PySpark.ipynb ~/Part2-PySpark.ipynb
+  548  docker cp e71cfcc69a85:/spark-2.2.0-bin-hadoop2.6/Part2-PySpark.ipynb ~/w205/project-2-ShuYingAmberChen/Part2/.
+  549  docker-compose down
+  550  history > ShuYingAmberChen-history.txt
+  551  cd ..
+  552  cd Part3
+  553  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml .
+  554  vim docker-compose.yml
+  555  cp ~/w205/project-2-ShuYingAmberChen/Part2/docker-compose.yml .
+  556  docker-compose up -d
+  557  docker-compose logs -f kafka
+  558  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  559  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  560  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  561  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  562  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  563  docker ps
+  564  docker cp 4102e3d9e5d1:/spark-2.2.0-bin-hadoop2.6/Part3-PySpark.ipynb ~/w205/project-2-ShuYingAmberChen/Part3/.
+  565  docker-compose down
+  566  history > ShuYingAmberChen-history.txt
+  567  cd w205/project-2-ShuYingAmberChen/Part3
+  568  docker-compose exec cloudera hadoop fs -ls /tmp/
+  569  docker-compose exec cloudera hadoop fs -ls /tmp/messages
+  570  docker-compose exec cloudera hadoop fs -ls /tmp/
+  571  docker-compose exec cloudera hadoop fs -ls /tmp/extracted_messages
+  572  docker-compose exec cloudera hadoop fs -ls /tmp/extracted_message
+  573  history > ShuYingAmberChen-terminal2-history.txt
+  574  cd w205
+  575  cd project-2-ShuYingAmberChen/
+  576  cd Part3
+  577  cp ~/w205/project-2-ShuYingAmberChen/Part2/docker-compose.yml .
+  578  docker-compose up -d
+  579  docker-compose ps
+  580  docker-compose logs -f kafka
+  581  docker-compose exec kafka kafka-topics --create --topic eduAssessment --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  582  docker-compose exec kafka kafka-topics --describe --topic eduAssessment --zookeeper zookeeper:32181
+  583  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c"
+  584  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | wc -l"
+  585  docker-compose exec mids bash -c "cat /w205/project-2-ShuYingAmberChen/assessment-attempts-20180128-121051-nested.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t eduAssessment && echo 'Produced 3280 messages.'"
+  586  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  587  docker ps
+  588  docker-compose down
+  589  history > ShuYingAmberChen-history.txt
+  590  cd ..
+  591  ls -lah
+  592  cd project-2-ShuYingAmberChen/
+  593  ls -lah
+  594  ls .git
+  595  git branch
+  596  git add *
+  597  git commit -m "Submit Project 2"
+  598  git push
+  599  git push --set-upstream origin assignment
+  600  git push
+  601  cd w205
+  602  git clone https://github.com/mids-w205-schioberg/project-3-ShuYingAmberChen.git
+  603  mkdir flask-with-kafka-and-spark/
+  604  cd flask-with-kafka-and-spark/
+  605  cp ~/w205/course-content/10-Transforming-Streaming-Data/docker-compose.yml .
+  606  cp ~/w205/course-content/10-Transforming-Streaming-Data/*.py .
+  607  docker-compose up -d
+  608  docker-compose exec kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  609  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:3218
+  610  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  611  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka-and-spark/game_api_with_json_events.py flask run --host 0.0.0.0
+  612  docker-compose down
+  613  docker-compose up d
+  614  docker-compose up -d
+  615  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  616  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka-and-spark/game_api_with_extended_json_events.py flask run --host 0.0.0.0
+  617  cd w205/flask-with-kafka-and-spark/
+  618  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  619  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  620  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  621  docker-compose exec mids curl http://localhost:5000/purchase_frog
+  622  docker-compose exec mids curl http://localhost:5000/
+  623  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  624  history > ShuYingAmberChen-history.txt
+  625  cd w205/flask-with-kafka-and-spark/
+  626  docker-compose exec mids curl http://localhost:5000/
+  627  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  628  docker-compose exec mids curl http://localhost:5000/
+  629  docker-compose exec mids curl http://localhost:5000/purchase_a_frog
+  630  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  631  docker-compose exec spark pyspark
+  632  docker-compose down
+  633  cd..
+  634  cd ...
+  635  cd ..
+  636  cd project-3-ShuYingAmberChen/
+  637  git branch
+  638  git branch assignment
+  639  git branch
+  640  git checkout assignment
+  641  cp ~/course-content/10-Transforming-Streaming-Data/docker-compose.yml .
+  642  cp ~/w205/course-content/10-Transforming-Streaming-Data/docker-compose.yml .
+  643  history > ShuYingAmberChen-history.txt
+  644  docker-compose up -d
+  645  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:3218
+  646  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  647  POST /purchase
+  648  cp ../w205/flask-with-kafka-and-spark/game_api_with_json_events.py .
+  649  cp ~/w205/flask-with-kafka-and-spark/game_api_with_json_events.py .
+  650  vim game_api_with_json_events.py 
+  651  docker-compose down
+  652  cd w205
+  653  docker pull midsw205/base:latest
+  654  git pull ~/w205/course-content
+  655  cd ..
+  656  git pull ~/w205/course-content
+  657  cd w205
+  658  mkdir spark-from-files/
+  659  cd spark-from-files/
+  660  cp ~/w205/course-content/11-Storing-Data-III/docker-compose.yml .
+  661  cp ~/w205/course-content/11-Storing-Data-III/*.py .
+  662  docker-compose up -d
+  663  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  664  vim game_api.py
+  665  docker-compose exec mids env FLASK_APP=/w205/spark-from-files/game_api.py flask run --host 0.0.0.0
+  666  cd w205/spark-from-files/
+  667  docker-compose up -d
+  668  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  669  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api_with_json_events.py flask run --host 0.0.0.0
+  670  docker-compose down
+  671  docker-compose up -d
+  672  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  673  cd w205
+  674  cd spark-from-files/
+  675  docker-compose exec mids curl http://localhost:5000/
+  676  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  677  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  678  docker-compose exec spark spark-submit /w205/spark-from-files/extract_events.py
+  679  docker-compose exec cloudera hadoop fs -ls /tmp/
+  680  docker-compose exec spark spark-submit separate_events.py
+  681  docker-compose exec spark spark-submit /w205/spark-from-files/separate_events.py
+  682  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  683  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/
+  684  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/
+  685  ocker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/purchase_a_sword
+  686  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/purchase_a_sword
+  687  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  688  cim ab-test.sh
+  689  vim ab-test.sh
+  690  sh ab-test.sh 
+  691  cp ../course-content/12-Querying-Data-II/filtered_writes.py .
+  692  vim filtered_writes.py
+  693  docker-compose exec spark spark-submit /w205/spark-from-files/filtered_writes.py
+  694  cd w205/spark-from-files/
+  695  docker-compose down
+  696  docker-compose up -d
+  697  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  698  cp ~/w205/course-content/12-Querying-Data-II/docker-compose.yml .
+  699  docker-compose up -d
+  700  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  701  docker-compose exec mids env FLASK_APP=/w205/full-stack/game_api.py flask run --host 0.0.0.0
+  702  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api_with_json_events.py flask run --host 0.0.0.0
+  703  docker-compose down
+  704  cd ..
+  705  cd project-3-ShuYingAmberChen/
+  706  docker-compose up -d
+  707  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  708  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api_with_json_events.py flask run --host 0.0.0.0
+  709  docker-compose down
+  710  cd w205/project-3-ShuYingAmberChen/
+  711  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/
+  712  cd w205
+  713  cd project-3-ShuYingAmberChen/
+  714  docker-compose down
+  715  docker-compose up -d
+  716  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  717  docker-compose down
+  718  cd w205/project-3-ShuYingAmberChen/
+  719  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/
+  720  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  721  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/join_guild
+  722  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/
+  723  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/purchase_a_sword
+  724  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/join_guild
+  725  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t events -o beginning -e"
+  726  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning -e
+  727  cd w205/project-3-ShuYingAmberChen/
+  728  docker-compose up -d
+  729  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  730  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api_with_json_events.py flask run --host 0.0.0.0
+  731  docker-compose down
+  732  cp ~/w205/course-content/12-Querying-Data-II/docker-compose.yml .
+  733  docker-compose up -d
+  734  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  735  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api_with_json_events.py flask run --host 0.0.0.0
+  736  cp ~/w205/course-content/12-Querying-Data-II/*.py .
+  737  docker-compose down
+  738  cd w205/project-3-ShuYingAmberChen/
+  739  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  740  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/
+  741  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  742  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_shield
+  743  docker-compose exec mids ab -n 10 -H "Host: user1.comcast.com" http://localhost:5000/join_guild
+  744  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/
+  745  docker-compose exec mids ab -n 10 -H "Host: user2.att.com" http://localhost:5000/purchase_a_sword
+  746  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  747  history > ShuYingAmberChen-terminal2-history.txt
+  748  cd w205/project-3-ShuYingAmberChen/
+  749  cp ~/w205/course-content/13-Understanding-Data/docker-compose.yml .
+  750  cp ~/w205/course-content/13-Understanding-Data/*.py .
+  751  vim game_api.py
+  752  docker-compose up -d
+  753  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  754  vim filtered_writes.py
+  755  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/filtered_writes.py
+  756  docker-compose exec spark spark-submit /w205/course-content/13-Understanding-Data/filtered_writes.py
+  757  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/filtered_writes.py
+  758  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases/
+  759  docker-compose exec cloudera hadoop fs -ls /tmp/shield_purchases/
+  760  docker-compose exec cloudera hadoop fs -ls /tmp/join_guilds/
+  761  docker-compose down
+  762  history > ShuYingAmberChen-history.txt
+  763  cd w205/full
+  764  cd w205/full-stack2/
+  765  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+  766  cd w205
+  767  cd full-stack2/
+  768  sh ab-test.sh 
+  769  docker-compose exec spark spark-submit /w205/full-stack2/filtered_writes.py
+  770  docker-compose exec cloudera hadoop fs -ls /tmp/purchases/
+  771  docker-compose exec spark spark-submit /w205/full-stack2/write_hive_table.py
+  772  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  773  docker-compose exec spark spark-submit /w205/full-stack2/filter_swords_batch.py
+  774  docker-compose exec spark spark-submit /w205/full-stack2/filter_swords_stream.py
+  775  docker-compose exec spark spark-submit /w205/full-stack2/write_swords_stream.py
+  776  cd w205/full-stack2/
+  777  vim ab-test.sh
+  778  sh ab-test.sh
+  779  docker-compose exec spark spark-submit /w205/full-stack2/write_swords_stream.py
+  780  sh ab-test.sh
+  781  cd w205/full-stack2/
+  782  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  783  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+  784  docker-compose exec cloudera hive
+  785  docker-compose exec spark spark-submit /w205/full-stack2/write_swords_stream.py
+  786  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  787  w203
+  788  w205
+  789  cd w205
+  790  git pull in ~/w205/course-content
+  791  mkdir ~/w205/full-stack2/
+  792  cd ~/w205/full-stack2
+  793  cp ~/w205/course-content/13-Understanding-Data/docker-compose.yml .
+  794  docker-compose pull
+  795  cp ~/w205/course-content/13-Understanding-Data/*.py .
+  796  docker-compose up -d
+  797  docker-compose exec mids env FLASK_APP=/w205/full-stack2/game_api.py flask run --host 0.0.0.0
+  798  cd w205
+  799  vim filter_swords_stream.py
+  800  cp ~/w205/full-stack2/ab-test.sh .
+  801  cd project-3-ShuYingAmberChen/
+  802  cp ~/w205/full-stack2/ab-test.sh .
+  803  docker-compose up -d
+  804  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/docker-compose.yml flask run --host 0.0.0.0
+  805  docker-compose down
+  806  cd w205/project-3-ShuYingAmberChen/
+  807  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  808  history > temp_hist2.txt
+  809  cd w205/project-3-ShuYingAmberChen/
+  810  history > temp_history.txt
+  811  cp ab-test.sh while-ab-test.sh
+  812  sh ab-test.sh
+  813  docker-compose exec spark spark-submit /w205/full-stack2/filter_swords_stream.py
+  814  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/filter_swords_stream.py
+  815  docker-compose exec spark spark-submit /w205/full-stack2/write_swords_stream.py
+  816  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  817  docker-compose exec spark spark-submit /w205/full-stack2/write_swords_stream.py
+  818  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  819  history > temp_hist3.txt
+  820  cd w205/project-3-ShuYingAmberChen/
+  821  docker-compose exec cloudera hadoop fs -ls /tmp/
+  822  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+  823  docker-compose exec cloudera hadoop fs -ls /tmp/shield_purchases
+  824  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  825  docker-compose exec spark spark-submit /w205/full-stack2/write_hive_table.py
+  826  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  827  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  828  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  829  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  830  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  831  docker-compose exec spark spark-submit /w205/full-stack2/write_hive_table.py
+  832  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  833  history > temp_hist4.txt
+  834  cd w205/project-3-ShuYingAmberChen/
+  835  docker-compose up -d
+  836  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  837  history > temp_history.txt
+  838  cd w205/project-3-ShuYingAmberChen/
+  839  docker-compose up -d
+  840  docker-compose down
+  841  docker-compose up -d
+  842  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  843  docker-compose down
+  844  cd w205/project-3-ShuYingAmberChen/
+  845  docker-compose up -d
+  846  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  847  docker-compose down
+  848  cd w205/project-3-ShuYingAmberChen/
+  849  docker-compose up -d
+  850  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  851  docker-compose exec mids env FLASK_APP=/w205/full-stack2/game_api.py flask run --host 0.0.0.0
+  852  docker-compose down
+  853  cd w205/project-3-ShuYingAmberChen/
+  854  sh ab-test.sh
+  855  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  856  cd w205/project-3-ShuYingAmberChen/
+  857  docker-compose exec cloudera hadoop fs -ls /tmp/
+  858  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  859  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  860  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  861  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  862  docker-compose exec spark spark-submit /w205/full-stack2/write_hive_table.py
+  863  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  864  docker-compose exec cloudera hadoop fs -ls /tmp/
+  865  docker-compose exec spark spark-submit /w205/full-stack2/write_hive_table.py
+  866  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  867  cp ~/w205/full-stack2/write_hive_table.py write_hive_test.py
+  868  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_test.py
+  869  docker-compose exec cloudera hadoop fs -ls /tmp/
+  870  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  871  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  872  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_test.py
+  873  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  874  history > temp_hist4.txt
+  875  cd w205/project-3-ShuYingAmberChen/
+  876  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  877  cd w205/project-3-ShuYingAmberChen/
+  878  docker-compose up -d
+  879  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  880  docker-compose down
+  881  cp ~/w205/full-stack2/docker-compose.yml .
+  882  docker-compose up -d
+  883  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  884  docker-compose down
+  885  cd w205/project-3-ShuYingAmberChen/
+  886  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  887  cd w205/project-3-ShuYingAmberChen/
+  888  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  889  cd w205/project-3-ShuYingAmberChen/
+  890  sh while-ab-test-Copy1.sh
+  891  sh while-ab-test-Copy1.sh 
+  892  docker-compose exec mids ab -p sword.json -n 10 -t application/json -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  893  cat sword1.json
+  894  cat sword.json
+  895  docker-compose exec mids ab -p sword.json -n 10 -t application/json -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  896  docker-compose exec mids ab -p /w205/project-3-ShuYingAmberChen/sword.json -n 10 -t application/json -H "Host: user1.comcast.com" http://localhost:5000/purchase_a_sword
+  897  sh while-ab-test-Copy1.sh 
+  898  sh while-ab-test.sh 
+  899  sh while-ab-test-Copy1.sh 
+  900  cd w205/project-3-ShuYingAmberChen/
+  901  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  902  cd w205
+  903  cd project-3-ShuYingAmberChen/
+  904  docker-compose up -d
+  905  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  906  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  907  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  908  docker-compose down
+  909  docker-compose up -d
+  910  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  911  docker-compose e down
+  912  docker-compose down
+  913  docker-compose up -d
+  914  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  915  docker-compose down
+  916  cd w205/project-3-ShuYingAmberChen/
+  917  docker-compose exec cloudera hadoop fs -ls /tmp/
+  918  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+  919  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  920  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  921  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  922  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  923  cd w205/project-3-ShuYingAmberChen/
+  924  sh while-ab-test.sh 
+  925  cd w205/project-3-ShuYingAmberChen/
+  926  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+  927  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  928  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  929  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  930  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  931  cd w205/project-3-ShuYingAmberChen/
+  932  docker-compose up -d
+  933  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  934  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  935  docker-compose down
+  936  docker-compose up -d
+  937  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  938  docker-composese down
+  939  docker-compose down
+  940  docker-compose up -d
+  941  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  942  cd w205/project-3-ShuYingAmberChen/
+  943  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  944  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  945  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  946  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  947  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  948  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  949  cd w205/project-3-ShuYingAmberChen/
+  950  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+  951  cd w205/project-3-ShuYingAmberChen/
+  952  sh while-ab-test.sh 
+  953  cd w205/project-3-ShuYingAmberChen/
+  954  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  955  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  956  cd w205/project-3-ShuYingAmberChen/
+  957  cd w205/project-3-ShuYingAmberChen/
+  958  cd w205
+  959  cd project-3-ShuYingAmberChen/
+  960  docker-compose up -d
+  961  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  962  docker-compose down
+  963  docker-compose up -d
+  964  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  965  docker-compose down
+  966  cd w205/project-3-ShuYingAmberChen/
+  967  cd w205/project-3-ShuYingAmberChen/
+  968  docker-compose up -d
+  969  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game
+  970  docker-compo
+  971  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run
+  972  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYin
+  973  git pull in ~/w205/course-content
+  974  docker-compose down
+  975  cd w205/project-3-ShuYingAmberChen/
+  976  sh while-ab-test.sh 
+  977  cd w205/project-3-ShuYingAmberChen/
+  978  docker-compose up -d
+  979  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+  980  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+  981  cd w205/project-3-ShuYingAmberChen/
+  982  cd w205/project-3-ShuYingAmberChen/
+  983  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+  984  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+  985  cd w205/project-3-ShuYingAmberChen/
+  986  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+  987  cd w205/project-3-ShuYingAmberChen/
+  988  docker-compose down
+  989  cd w205
+  990  cd ..
+  991  mkdir -p docker/mytools
+  992  cd docker/mytools/
+  993  rm Dockerfile
+  994  vim Dockerfile
+  995  docker build -t mytools .
+  996  docker images
+  997  docker run -it --rm mytools bash
+  998  cd w205/project-3-ShuYingAmberChen/
+  999  docker-compose up -d
+ 1000  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+ 1001  cd w205/project-3-ShuYingAmberChen/
+ 1002  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+ 1003  cd w205/project-3-ShuYingAmberChen/
+ 1004  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1005  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1006  cd w205/project-3-ShuYingAmberChen/
+ 1007  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api-Copy1.py flask run --host 0.0.0.0
+ 1008  docker-compose down
+ 1009  docker-compose up -d
+ 1010  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+ 1011  docker-compose down
+ 1012  docker-compose up -d
+ 1013  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+ 1014  docker-compose down
+ 1015  docker-compose up -d
+ 1016  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+ 1017  docker-compose down
+ 1018  cd w205/project-3-ShuYingAmberChen/
+ 1019  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+ 1020  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1021  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py
+ 1022  cd w205/project-3-ShuYingAmberChen/
+ 1023  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1024  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1025  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1026  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1027  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1028  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1029  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1030  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+ 1031  docker-compose exec cloudera hadoop fs -ls /tmp/join_guilds
+ 1032  cd w205/project-3-ShuYingAmberChen/
+ 1033  sh while-ab-test.sh 
+ 1034  bash while-ab-test.sh 
+ 1035  bash while-ab-test.sh
+ 1036  docker-compose exec cloudera hadoop fs -ls /tmp/join_guilds
+ 1037  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+ 1038  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1039  bash while-ab-test.sh
+ 1040  cd w205/project-3-ShuYingAmberChen/
+ 1041  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1042  cd w205/project-3-ShuYingAmberChen/
+ 1043  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1044  docker-compose exec cloudera hadoop fs -ls /tmp/sword_purchases
+ 1045  docker-compose exec cloudera hadoop fs -ls /tmp/shield_purchases
+ 1046  docker-compose exec cloudera hadoop fs -ls /tmp/join_guilds
+ 1047  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1048  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1049  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1050  cd w205/project-3-ShuYingAmberChen/
+ 1051  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_swords_stream.py  
+ 1052  cd w205/project-3-ShuYingAmberChen/
+ 1053  docker-compose 
+ 1054  docker-compose up -d
+ 1055  docker-compose exec mids env FLASK_APP=/w205/project-3-ShuYingAmberChen/game_api.py flask run --host 0.0.0.0
+ 1056  docker-compose down
+ 1057  cd w205/project-3-ShuYingAmberChen/
+ 1058  bash while-ab-test.sh
+ 1059  cd w205/project-3-ShuYingAmberChen/
+ 1060  docker-compose exec mids kafkacat -C -b kafka:29092 -t events -o beginning
+ 1061  cd w205/project-3-ShuYingAmberChen/
+ 1062  docker-compose exec spark spark-submit /w205/project-3-ShuYingAmberChen/write_hive_table.py
+ 1063  docker-compose exec cloudera hadoop fs -ls /tmp/
+ 1064  docker-compose exec presto presto --server presto:8080 --catalog hive --schema default
+ 1065  history > ShuYingAmberChen-terminal6-history.txt
